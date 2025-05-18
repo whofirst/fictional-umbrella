@@ -2,114 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NBA Tableau Dashboards</title>
+  <title>Fictional Umbrella's Dashboards</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f7f7f7;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 20px;
     }
-    .dashboard-container {
-      margin-bottom: 60px;
-      overflow-x: auto;
+
+    h1 {
+      text-align: center;
+      color: #333;
     }
-    .tableauPlaceholder {
-      border: 1px solid #ccc;
+
+    .dashboard-container {
+      margin: 40px auto;
+      max-width: 1200px;
+      background: white;
+      padding: 20px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      margin: auto;
+    }
+
+    .tableauPlaceholder {
+      width: 100%;
+      height: 950px;
+    }
+
+    @media (max-width: 768px) {
+      .tableauPlaceholder {
+        height: 1200px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>NBA Tableau Dashboards</h1>
+  <h1>Fictional Umbrella's Dashboards</h1>
 
   <!-- Dashboard 1: NBA Star Matchup -->
   <div class="dashboard-container">
-    <div class="tableauPlaceholder" id="viz1" style="width: 1169px; height: 954px;">
-      <noscript>
-        <a href="#">
-          <img alt="NBA Star Matchup"
-            src="https://public.tableau.com/static/images/NB/NBAStarMatchup/Story1/1_rss.png" style="border: none" />
-        </a>
-      </noscript>
-      <object class="tableauViz" style="width: 1169px; height: 954px;">
-        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-        <param name="embed_code_version" value="3" />
-        <param name="site_root" value="" />
-        <param name="name" value="NBAStarMatchup/Story1" />
-        <param name="tabs" value="no" />
-        <param name="toolbar" value="yes" />
-        <param name="static_image" value="https://public.tableau.com/static/images/NB/NBAStarMatchup/Story1/1.png" />
-        <param name="animate_transition" value="yes" />
-        <param name="display_static_image" value="yes" />
-        <param name="display_spinner" value="yes" />
-        <param name="display_overlay" value="yes" />
-        <param name="display_count" value="yes" />
-        <param name="language" value="en-US" />
-      </object>
-    </div>
+    <h2>NBA Star Matchup</h2>
+    <div class='tableauPlaceholder' id='vizNBA'></div>
   </div>
 
   <!-- Dashboard 2: RTL Public Transport -->
   <div class="dashboard-container">
-    <div class="tableauPlaceholder" id="viz2" style="width: 1169px; height: 754px;">
-      <noscript>
-        <a href="#">
-          <img alt="RTL Public Transport"
-            src="https://public.tableau.com/static/images/RT/RTLPublicTransportNetwork/Dashboard3/1_rss.png"
-            style="border: none" />
-        </a>
-      </noscript>
-      <object class="tableauViz" style="width: 1169px; height: 754px;">
-        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-        <param name="embed_code_version" value="3" />
-        <param name="site_root" value="" />
-        <param name="name" value="RTLPublicTransportNetwork/Dashboard3" />
-        <param name="tabs" value="no" />
-        <param name="toolbar" value="yes" />
-        <param name="static_image" value="https://public.tableau.com/static/images/RT/RTLPublicTransportNetwork/Dashboard3/1.png" />
-        <param name="animate_transition" value="yes" />
-        <param name="display_static_image" value="yes" />
-        <param name="display_spinner" value="yes" />
-        <param name="display_overlay" value="yes" />
-        <param name="display_count" value="yes" />
-        <param name="language" value="en-US" />
-      </object>
-    </div>
+    <h2>RTL Public Transport Network</h2>
+    <div class='tableauPlaceholder' id='vizRTL'></div>
   </div>
 
   <!-- Dashboard 3: CO2 Emissions -->
   <div class="dashboard-container">
-    <div class="tableauPlaceholder" id="viz3" style="width: 1169px; height: 854px;">
-      <noscript>
-        <a href="#">
-          <img alt="CO2 Emissions"
-            src="https://public.tableau.com/static/images/Co/Co2EmissionsinAmerica/ExplanitoryDB/1_rss.png"
-            style="border: none" />
-        </a>
-      </noscript>
-      <object class="tableauViz" style="width: 1169px; height: 854px;">
-        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-        <param name="embed_code_version" value="3" />
-        <param name="site_root" value="" />
-        <param name="name" value="Co2EmissionsinAmerica/ExplanitoryDB" />
-        <param name="tabs" value="no" />
-        <param name="toolbar" value="yes" />
-        <param name="static_image" value="https://public.tableau.com/static/images/Co/Co2EmissionsinAmerica/ExplanitoryDB/1.png" />
-        <param name="animate_transition" value="yes" />
-        <param name="display_static_image" value="yes" />
-        <param name="display_spinner" value="yes" />
-        <param name="display_overlay" value="yes" />
-        <param name="display_count" value="yes" />
-        <param name="language" value="en-US" />
-      </object>
-    </div>
+    <h2>CO₂ Emissions in America</h2>
+    <div class='tableauPlaceholder' id='vizCO2'></div>
   </div>
 
-  <!-- Tableau script -->
-  <script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+  <!-- Tableau Script Loader -->
+  <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+  <script type='text/javascript'>
+    const dashboards = [
+      {
+        elementId: 'vizNBA',
+        url: 'https://public.tableau.com/views/NBAStarMatchup/Story1',
+        width: '1169px',
+        height: '950px'
+      },
+      {
+        elementId: 'vizRTL',
+        url: 'https://public.tableau.com/views/RTLPublicTransportNetwork/Dashboard3',
+        width: '1169px',
+        height: '754px'
+      },
+      {
+        elementId: 'vizCO2',
+        url: 'https://public.tableau.com/views/Co2EmissionsinAmerica/ExplanitoryDB',
+        width: '1169px',
+        height: '854px'
+      }
+    ];
+
+    dashboards.forEach(d => {
+      const container = document.getElementById(d.elementId);
+      const objectEl = document.createElement('object');
+      objectEl.className = 'tableauViz';
+      objectEl.style.width = d.width;
+      objectEl.style.height = d.height;
+
+      objectEl.innerHTML = `
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='${d.url.split('/').slice(-2).join('/')}' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      `;
+      container.appendChild(objectEl);
+    });
+  </script>
 
 </body>
 </html>
