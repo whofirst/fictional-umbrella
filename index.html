@@ -3,74 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard Exhibit</title>
+
   <style>
     body {
-      margin: 0;
-      padding: 20px;
       font-family: Arial, sans-serif;
-      background-image: url('Analytics.png'); /* background image */
+      background-image: url('Analytics.png'); /* Replace with your image path */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
       text-align: center;
       color: white;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      margin-top: 30px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
     }
 
     p {
       text-align: center;
       font-size: 1.2em;
-      color: #f4f4f4;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      color: #ddd;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      margin-bottom: 40px;
     }
 
     .dashboard-container {
       margin: 40px auto;
       max-width: 1500px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.95);
       padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(6px);
-
-      /* center dashboard content */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
-    h2 {
+    .dashboard-container h2 {
       text-align: center;
       color: #222;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .tableauPlaceholder {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .tableauViz {
       display: block;
       margin: 0 auto;
+      width: 100%;
+      height: 950px;
+      text-align: center;
+    }
+
+    object.tableauViz {
+      display: inline-block !important;
     }
 
     @media (max-width: 768px) {
       .tableauPlaceholder {
-        height: auto;
-        flex-direction: column;
+        height: 1200px;
       }
     }
   </style>
 </head>
-<body>
 
+<body>
   <h1>Dashboard Exhibit</h1>
   <p>By Yann Yusuf Perron</p>
 
@@ -79,13 +75,26 @@
     <h2>NBA Matchup (Update)</h2>
     <div class='tableauPlaceholder' id='viz1761310873438'>
       <noscript>
-        <a href='#'>
+        <a href='https://public.tableau.com/views/NBAMatchUpUpdated/Story1'>
           <img alt='Story 1'
                src='https://public.tableau.com/static/images/NB/NBAMatchUpUpdated/Story1/1_rss.png'
-               style='border: none' />
+               style='border:none;'/>
         </a>
       </noscript>
-      <object class='tableauViz' style='display:none;'></object>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+        <param name='embed_code_version' value='3'/>
+        <param name='site_root' value=''/>
+        <param name='name' value='NBAMatchUpUpdated/Story1'/>
+        <param name='tabs' value='no'/>
+        <param name='toolbar' value='yes'/>
+        <param name='animate_transition' value='yes'/>
+        <param name='display_static_image' value='yes'/>
+        <param name='display_spinner' value='yes'/>
+        <param name='display_overlay' value='yes'/>
+        <param name='display_count' value='yes'/>
+        <param name='language' value='en-US'/>
+      </object>
     </div>
   </div>
 
@@ -109,61 +118,4 @@
 
   <!-- Tableau Script Loader -->
   <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
-  <script type='text/javascript'>
-    const dashboards = [
-      {
-        elementId: 'vizRESEAU',
-        url: 'https://public.tableau.com/views/ReseaudeTransportdeLongueuil_/Dashboard1',
-        width: '1200px',
-        height: '950px'
-      },
-      {
-        elementId: 'vizCO2',
-        url: 'https://public.tableau.com/views/Co2EmissionsinAmerica/ExplanitoryDB',
-        width: '1100px',
-        height: '850px'
-      },
-      {
-        elementId: 'vizNBA',
-        url: 'https://public.tableau.com/views/NBAStarMatchup/Story1',
-        width: '1200px',
-        height: '950px'
-      }
-    ];
-
-    dashboards.forEach(d => {
-      const container = document.getElementById(d.elementId);
-      const objectEl = document.createElement('object');
-      objectEl.className = 'tableauViz';
-      objectEl.style.width = d.width;
-      objectEl.style.height = d.height;
-
-      objectEl.innerHTML = `
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='site_root' value='' />
-        <param name='name' value='${d.url.split('/').slice(-2).join('/')}' />
-        <param name='tabs' value='no' />
-        <param name='toolbar' value='yes' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='language' value='en-US' />
-      `;
-      container.appendChild(objectEl);
-    });
-
-    // Dashboard 1 Script (NBA Matchup Update)
-    const divElement = document.getElementById('viz1761310873438');
-    const vizElement = divElement.getElementsByTagName('object')[0];
-    vizElement.style.width = '1200px';
-    vizElement.style.height = '950px';
-    const scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  </script>
-
-</body>
-</html>
+  <script
