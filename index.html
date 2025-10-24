@@ -31,11 +31,11 @@
     .dashboard-container {
       margin: 40px auto;
       max-width: 1500px;
-      background: rgba(255, 255, 255, 0.8); /* <-- transparency added */
+      background: rgba(255, 255, 255, 0.8); /* translucent panel */
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(6px); /* softens the background behind it */
+      backdrop-filter: blur(6px);
     }
 
     h2 {
@@ -60,25 +60,7 @@
   <h1>Dashboard Exhibit</h1>
   <p>By Yann Yusuf Perron</p>
 
-  <!-- Dashboard 1: NBA Star Matchup -->
-  <div class="dashboard-container">
-    <h2>NBA Star Matchup</h2>
-    <div class='tableauPlaceholder' id='vizNBA'></div>
-  </div>
-
-  <!-- Dashboard 2: RTL Public Transport -->
-  <div class="dashboard-container">
-    <h2>Reseau de Transport de Longueuil</h2>
-    <div class='tableauPlaceholder' id='vizRESEAU'></div>
-  </div>
-
-  <!-- Dashboard 3: CO2 Emissions -->
-  <div class="dashboard-container">
-    <h2>CO₂ Emissions in America</h2>
-    <div class='tableauPlaceholder' id='vizCO2'></div>
-  </div>
-
-  <!-- Dashboard 4: NBA Matchup Story -->
+  <!-- Dashboard 1: NBA Matchup (Update) -->
   <div class="dashboard-container">
     <h2>NBA Matchup (Update)</h2>
     <div class='tableauPlaceholder' id='viz1761310873438' style='position: relative'>
@@ -108,16 +90,28 @@
     </div>
   </div>
 
+  <!-- Dashboard 2: RTL Public Transport -->
+  <div class="dashboard-container">
+    <h2>Reseau de Transport de Longueuil</h2>
+    <div class='tableauPlaceholder' id='vizRESEAU'></div>
+  </div>
+
+  <!-- Dashboard 3: CO2 Emissions -->
+  <div class="dashboard-container">
+    <h2>CO₂ Emissions in America</h2>
+    <div class='tableauPlaceholder' id='vizCO2'></div>
+  </div>
+
+  <!-- Dashboard 4: NBA Star Matchup -->
+  <div class="dashboard-container">
+    <h2>NBA Star Matchup</h2>
+    <div class='tableauPlaceholder' id='vizNBA'></div>
+  </div>
+
   <!-- Tableau Script Loader -->
   <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
   <script type='text/javascript'>
     const dashboards = [
-      {
-        elementId: 'vizNBA',
-        url: 'https://public.tableau.com/views/NBAStarMatchup/Story1',
-        width: '1369px',
-        height: '950px'
-      },
       {
         elementId: 'vizRESEAU',
         url: 'https://public.tableau.com/views/ReseaudeTransportdeLongueuil_/Dashboard1',
@@ -129,6 +123,12 @@
         url: 'https://public.tableau.com/views/Co2EmissionsinAmerica/ExplanitoryDB',
         width: '1169px',
         height: '854px'
+      },
+      {
+        elementId: 'vizNBA',
+        url: 'https://public.tableau.com/views/NBAStarMatchup/Story1',
+        width: '1369px',
+        height: '950px'
       }
     ];
 
@@ -156,7 +156,7 @@
       container.appendChild(objectEl);
     });
 
-    // Dashboard 4 Script
+    // Dashboard 1 Script (NBA Matchup Update)
     const divElement = document.getElementById('viz1761310873438');
     const vizElement = divElement.getElementsByTagName('object')[0];
     vizElement.style.width = '1190px';
