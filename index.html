@@ -4,15 +4,22 @@
   <meta charset="UTF-8">
   <title>Dashboard Exhibit</title>
   <style>
+    /* Video background styling */
+    #video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
     body {
       margin: 0;
       padding: 20px;
       font-family: Arial, sans-serif;
-      background-image: url('Bigdata.jpg'); /* Updated background image */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      position: relative;
     }
 
     h1 {
@@ -66,6 +73,12 @@
   </style>
 </head>
 <body>
+
+  <!-- Video Background -->
+  <video autoplay muted loop id="video-bg">
+    <source src="Githubpagesvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
   <h1>Dashboard Exhibit</h1>
   <p>By Yann Yusuf Perron</p>
