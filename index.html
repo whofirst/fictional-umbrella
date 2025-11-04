@@ -8,24 +8,11 @@
       margin: 0;
       padding: 20px;
       font-family: Arial, sans-serif;
-      background-image: url('Bigdata.jpg'); /* Updated background image */
+      background-image: url('Bigdata.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-    }
-
-    h1 {
-      text-align: center;
-      color: black;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    }
-
-    p {
-      text-align: center;
-      font-size: 1.2em;
-      color: #f4f4f4;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
     .dashboard-container {
@@ -36,6 +23,19 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .header-author {
+      text-align: center;
+      font-size: 1.2em;
+      color: black;
+      text-shadow: none;
     }
 
     h2 {
@@ -67,8 +67,10 @@
 </head>
 <body>
 
-  <h1>Dashboard Exhibit</h1>
-  <p>By Yann Yusuf Perron</p>
+  <div class="dashboard-container">
+    <h1>Dashboard Exhibit</h1>
+    <p class="header-author">By Yann Yusuf Perron</p>
+  </div>
 
   <!-- Dashboard 1: NBA Matchup (Update) -->
   <div class="dashboard-container">
